@@ -1,16 +1,16 @@
 [
 {
-  "modid": "EnderZoo",
-  "name": "Ender Zoo",
-  "description": "More Mobs",
+  "modid": "owls",
+  "name": "Owls",
+  "description": "Just Owls",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "http://enderio.com",
+  "url": "",
   "updateUrl": "",
   "authors": [
-    "crazypants"
+    "magiclobby"
   ],
-  "credits": "By CrazyPants",
+  "credits": "Based on Owls from EnderZoo",
   "logoFile": "",
   "screenshots": [
   ],

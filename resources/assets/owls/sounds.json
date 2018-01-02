@@ -1,0 +1,20 @@
+{
+  "owl.hootDouble": {
+    "category": "neutral",
+    "sounds": [
+      "owls:owl/hootDouble"
+    ]
+  },
+  "owl.hootSingle": {
+    "category": "neutral",
+    "sounds": [
+      "owls:owl/hootSingle"
+    ]
+  },
+   "owl.hurt": {
+    "category": "neutral",
+    "sounds": [
+      "owls:owl/hurt"
+    ]
+  }
+}

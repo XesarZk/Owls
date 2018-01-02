@@ -21,8 +21,8 @@ if (System.getenv('BUILD_NUMBER') != null)
 else
     logger.lifecycle "No build number detected, setting to 0"
 
-group = "com.enderio.enderzoo"
-archivesBaseName = "EnderZoo"
+group = "com.magiclobby.owls"
+archivesBaseName = "Owls"
 version = "${minecraft_version}-${mod_version}.${buildnumber}"
 
 boolean dev = System.getenv("RELEASE") == null || System.getenv("RELEASE").equalsIgnoreCase("false")
@@ -39,7 +39,7 @@ minecraft {
     runDir = 'run'
 
     replace "@VERSION@", project.version
-    replaceIn "EnderZoo.java"
+    replaceIn "Owls.java"
 }
 
 configurations {

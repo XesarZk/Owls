@@ -15,8 +15,8 @@ hs_err_pid*
 /.classpath
 /.project
 bin
-/resources/assets/enderzoo/entity/*.pdn
-/resources/assets/enderzoo/textures/blocks/*.pdn
+/resources/assets/owls/entity/*.pdn
+/resources/assets/owls/textures/blocks/*.pdn
 /eclipse
 *.bak
 /run

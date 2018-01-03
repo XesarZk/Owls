@@ -49,7 +49,7 @@ public class FlyingPathFinder extends PathFinder {
       return null;
     }
     EntityLiving entityIn = (EntityLiving)ent;    
-    nodeProcessor.initProcessor(blockaccess, (EntityLiving) entityIn);
+    nodeProcessor.init(blockaccess, (EntityLiving) entityIn);
         
     PathPoint startPoint = nodeProcessor.getStart();
     PathPoint endPoint = nodeProcessor.getPathPointToCoords(x, y, z);
@@ -99,7 +99,7 @@ public class FlyingPathFinder extends PathFinder {
     
     //then path from the climb point to destination
     path.clearPath();    
-    nodeProcessor.initProcessor(blockaccess, (EntityLiving) entityIn);
+    nodeProcessor.init(blockaccess, (EntityLiving) entityIn);
     //climbPoint.index = -1;
     climbPoint = new PathPoint(climbPoint.x, climbPoint.y, climbPoint.z);
     points = addToPath(entityIn, climbPoint, endPoint, distance);
@@ -203,7 +203,7 @@ public class FlyingPathFinder extends PathFinder {
 
   private Path createDefault(IBlockAccess blockaccess, EntityLiving entityIn, float distance, double x, double y, double z) {
     this.path.clearPath();
-    this.nodeProcessor.initProcessor(blockaccess, entityIn);
+    this.nodeProcessor.init(blockaccess, entityIn);
     
 //    PathPoint pathpoint1 =nodeProcessor.getPathPointToCoords(entityIn, x, y, z);    
     PathPoint pathpoint = nodeProcessor.getStart();

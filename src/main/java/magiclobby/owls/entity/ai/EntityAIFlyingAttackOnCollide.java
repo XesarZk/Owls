@@ -89,7 +89,7 @@ public class EntityAIFlyingAttackOnCollide extends EntityAIBase {
 
   @Override
   public void resetTask() {
-    attacker.getNavigator().clearPathEntity();
+    attacker.getNavigator().clearPath();
   }
 
   @Override

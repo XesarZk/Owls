@@ -83,7 +83,7 @@ public class EntityUtil {
       ent.tasks.removeTask(task.action);
       ent.tasks.addTask(task.priority, task.action);
     }
-    ent.getNavigator().clearPathEntity();
+    ent.getNavigator().clearPath();
   }
 
   public static IAttributeInstance removeModifier(EntityLivingBase ent, IAttribute p, UUID u) {
@@ -101,7 +101,7 @@ public class EntityUtil {
     if (nearest == null) {
       return 1;
     }
-    return nearest.getDistanceSqToEntity(entity);
+    return nearest.getDistanceSq(entity);
   }
 
   public static boolean isPlayerWithinRange(Entity entity, double range) {

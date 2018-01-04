@@ -24,6 +24,7 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIMate;
 import net.minecraft.entity.ai.EntityAITempt;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
+import net.minecraft.entity.ai.attributes.IAttributeInstance;
 import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -113,10 +114,11 @@ public class EntityOwl extends EntityAnimal implements IFlyingMob {
   @Override
   protected void applyEntityAttributes() {
     super.applyEntityAttributes();
-    getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(4.0D);
+    getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(Config.owlHealth);
     getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.25D);
-    MobInfo.OWL.applyAttributes(this);
-    
+    getAttributeMap().registerAttribute(SharedMonsterAttributes.ATTACK_DAMAGE);
+    IAttributeInstance ai = getAttributeMap().getAttributeInstance(SharedMonsterAttributes.ATTACK_DAMAGE);
+    ai.setBaseValue(Config.owlAttackDamage);
   }
 
   @Override
@@ -154,7 +156,7 @@ public class EntityOwl extends EntityAnimal implements IFlyingMob {
     prevDestPos = destPos;
     destPos = (float) (destPos + (onGround ? -1 : 4) * 0.3D);
     destPos = MathHelper.clamp(destPos, 0.0F, 1.0F);
-    if (!onGround && wingRotDelta < 1.0F) {
+    if (!onGround && wingRotDelta < .0F) {
       wingRotDelta = 1.0F;
     }
     wingRotDelta = (float) (wingRotDelta * 0.9D);

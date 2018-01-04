@@ -3,7 +3,7 @@ package magiclobby.owls.entity;
 import magiclobby.owls.entity.navigate.FlyingPathNavigate;
 import net.minecraft.entity.EntityCreature;
 
-public interface IFlyingMob extends IEnderZooMob {
+public interface IFlyingMob{
 
   float getMaxTurnRate();
   

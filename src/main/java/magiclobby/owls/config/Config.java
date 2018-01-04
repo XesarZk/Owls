@@ -40,12 +40,13 @@ public final class Config {
     }
 
     public static Configuration config;
+    public static File configDirectory;
 
     public static final Section sectionOwl = new Section("Owl", "owl");
     public static boolean owlEnabled = true;
     public static int owlId = 689998;
     public static int owlHealth = 10;
-    public static int owlAttachDamage = 4;
+    public static int owlAttackDamage = 4;
     public static float owlSpiderDamageMultiplier = 2;
     public static float owlHootVolumeMult = 0.8f;
     public static int owlHootInterval = 1000;
@@ -55,7 +56,12 @@ public final class Config {
 
     public static void load(FMLPreInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new Config());
-        File configFile = new File("Owls.cfg");
+        configDirectory = event.getModConfigurationDirectory();
+        if (!configDirectory.exists()) {
+            configDirectory.mkdir();
+        }
+
+        File configFile = new File(configDirectory, "Owls.cfg");
         config = new Configuration(configFile);
         syncConfig();
     }
@@ -85,7 +91,7 @@ public final class Config {
         owlEnabled = config.getBoolean("owlEnabled", sectionOwl.name, owlEnabled, "If false Owl will be disabled");
         owlId = config.get(sectionOwl.name, "owlId", owlId, "Mob ID").getInt(owlId);
         owlHealth = config.get(sectionOwl.name, "owlHealth", owlHealth, "Owl Health").getInt(owlHealth);
-        owlAttachDamage = config.get(sectionOwl.name, "owlAttachDamage", owlAttachDamage, "Owl Attack Damage").getInt(owlAttachDamage);
+        owlAttackDamage = config.get(sectionOwl.name, "owlAttackDamage", owlAttackDamage, "Owl Attack Damage").getInt(owlAttackDamage);
         owlSpiderDamageMultiplier = (float) config.get(sectionOwl.name, "owlSpiderDamageMultiplier", owlSpiderDamageMultiplier, "Damage multiplier against spiders")
                 .getDouble(owlSpiderDamageMultiplier);
         owlHootVolumeMult = (float) config

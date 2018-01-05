@@ -1,0 +1,12 @@
+//***  Owls *****//
+
+//Items
+item.spawnegg.name=生成
+item.owlegg.name=猫头鹰蛋
+
+
+//Mobs
+entity.owls.owl.name=猫头鹰
+
+//these are for the chat messages "Player was slain by", it doesnt use above versions
+entity.owl.name=猫头鹰

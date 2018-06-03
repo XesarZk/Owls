@@ -1,0 +1,12 @@
+//***  Owls [Traslade by Xesar_Zk]  *****//
+
+//Items
+item.spawnegg.name=Spawn
+item.owlegg.name=Huevo de Buho
+
+
+//Mobs
+entity.owls.owl.name=Buho
+
+//these are for the chat messages "Player was slain by", it doesnt use above versions
+entity.owl.name=Buho
